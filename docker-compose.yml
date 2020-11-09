@@ -16,3 +16,9 @@ services:
       MYSQL_DATABASE: library
       MYSQL_ROOT_PASSWORD: password
 
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on: [mysql]
+
