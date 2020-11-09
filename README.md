@@ -12,6 +12,8 @@ Hay un archivo `docker-compose` que al ejecutarse levantará dos servicios:
 
 Si necesitas ralizar cambios en la aplicación y quieres ejecutarla directamente en tu máquina local necesitas instalar el intérprete de Go y después (desde la carpeta `app`)
 
+* **IMPORTANTE:** Deberás ir al archivo `repository.go` y cambiar los parámetros de conexión de MySQL
+
 `go run main.go`
 
 y para ejecutar los tests
