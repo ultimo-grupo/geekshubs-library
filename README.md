@@ -2,6 +2,11 @@
 
 API REST para gestionar libros.
 
+## Requisitos
+
+- Docker y docker-compose
+- Go
+
 ## Instalación
 
 En Linux:
