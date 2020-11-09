@@ -14,6 +14,7 @@ type Repository interface {
 	Delete(id int64) error
 	Find(id int64) (*Book, error)
 	Update(id int64, book Book) (int64, error)
+	All() ([]Book, error)
 }
 
 // MysqlRepository Mysql Repostiroy
@@ -30,6 +31,16 @@ func NewMysqlRepository() *MysqlRepository {
 	return &MysqlRepository{
 		DB: db,
 	}
+}
+
+// All get all books
+func (r *MysqlRepository) All() ([]Book, error) {
+	var books []Book
+	err := r.DB.Select(&books, "SELECT title, author, year, isbn, description FROM library")
+	if err != nil {
+		return nil, err
+	}
+	return books, nil
 }
 
 // Save save book

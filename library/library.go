@@ -12,6 +12,11 @@ func NewLibrary(repository Repository) *Library {
 	}
 }
 
+// All get all books
+func (library *Library) All() (books []Book, err error) {
+	return library.Repository.All()
+}
+
 // Add adds a new book to the Library
 func (library *Library) Add(book Book) (id int64, err error) {
 	return library.Repository.Save(book)
