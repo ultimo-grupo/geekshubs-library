@@ -28,11 +28,12 @@ func (l *RepositoryMock) Find(id int64) (*Book, error) {
 
 // Update mock
 func (l *RepositoryMock) Update(id int64, book Book) (int64, error) {
-	return 0, nil
+	args := l.Called(id, book)
+	return args.Get(0).(int64), args.Error(1)
 }
 
 // All mock
 func (l *RepositoryMock) All() ([]Book, error) {
-	args := l.Called(0)
+	args := l.Called()
 	return args.Get(0).([]Book), nil
 }
