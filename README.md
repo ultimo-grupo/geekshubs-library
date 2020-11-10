@@ -1,4 +1,4 @@
-# GeeksHubs Library Demo App
+# 📚 GeeksHubs Library Demo App
 
 API REST para gestionar libros.
 
