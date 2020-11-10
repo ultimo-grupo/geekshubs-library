@@ -17,12 +17,12 @@ type Repository interface {
 	All() ([]Book, error)
 }
 
-// MysqlRepository Mysql Repostiroy
+// MysqlRepository Mysql Repository
 type MysqlRepository struct {
 	DB *sqlx.DB
 }
 
-// NewMysqlRepository returns a MysqlRepostitory
+// NewMysqlRepository returns a MysqlRepository
 func NewMysqlRepository() *MysqlRepository {
 	db, err := sqlx.Connect("mysql", "user:password@(mysql:3306)/library")
 	if err != nil {
