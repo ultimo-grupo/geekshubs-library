@@ -14,11 +14,11 @@ Si necesitas ralizar cambios en la aplicación y quieres ejecutarla directamente
 
 * **IMPORTANTE:** Deberás ir al archivo `repository.go` y cambiar los parámetros de conexión de MySQL
 
-`go run main.go`
+`make run`
 
 y para ejecutar los tests
 
-`go tests ./...`
+`make test`
 
 ## API 
 
