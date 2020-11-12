@@ -7,16 +7,16 @@ API REST para gestionar libros.
 La API se ha implementado con una pequeña aplicación en Go. Para persistir la información utiliza una Base de Datos MySQL.
 Hay un archivo `docker-compose` que al ejecutarse levantará dos servicios:
 
-* La aplicacíon, que escucha en el puerto `:8080`
-* La Base de Datos MySQL que escucha en el puerto `:3306`
+* Aplicacíon `:8080`
+* Base de Datos MySQL `:3306`
 
-Si necesitas ralizar cambios en la aplicación y quieres ejecutarla directamente en tu máquina local necesitas instalar el intérprete de Go y después (desde la carpeta `app`)
-
-* **IMPORTANTE:** Deberás ir al archivo `repository.go` y cambiar los parámetros de conexión de MySQL
+Si necesitas ralizar cambios en la aplicación y quieres lanzarla directamente en tu máquina local necesitas instalar el intérprete de Go y después ejecutar: 
 
 `make run`
 
-y para ejecutar los tests
+* **IMPORTANTE:** Fíjate en la configuración de conexión de la Base de Datos al principio del archivo `Makefile`
+
+y para lanzar los tests
 
 `make test`
 

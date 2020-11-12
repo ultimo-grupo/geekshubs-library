@@ -23,8 +23,8 @@ type MysqlRepository struct {
 }
 
 // NewMysqlRepository returns a MysqlRepository
-func NewMysqlRepository() *MysqlRepository {
-	db, err := sqlx.Connect("mysql", "user:password@(mysql:3306)/library")
+func NewMysqlRepository(conn string) *MysqlRepository {
+	db, err := sqlx.Connect("mysql", conn)
 	if err != nil {
 		log.Fatal(err)
 	}

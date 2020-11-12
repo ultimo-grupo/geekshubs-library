@@ -1,9 +1,9 @@
 package api
 
 import (
-	"bookstore/library"
 	"strconv"
 
+	"github.com/rubencougil/geekshubs-library/pkg/library"
 	"github.com/sirupsen/logrus"
 
 	"github.com/gin-gonic/gin"

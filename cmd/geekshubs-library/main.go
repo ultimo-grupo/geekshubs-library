@@ -1,8 +1,10 @@
 package main
 
 import (
-	"bookstore/api"
-	library_pkg "bookstore/library"
+	"os"
+
+	"github.com/rubencougil/geekshubs-library/pkg/api"
+	library_pkg "github.com/rubencougil/geekshubs-library/pkg/library"
 
 	"github.com/sirupsen/logrus"
 	ginlogrus "github.com/toorop/gin-logrus"
@@ -13,7 +15,8 @@ import (
 func main() {
 
 	logger := logrus.New()
-	library := library_pkg.NewLibrary(library_pkg.NewMysqlRepository())
+	dbConn := os.Getenv("DB")
+	library := library_pkg.NewLibrary(library_pkg.NewMysqlRepository(dbConn))
 	handlers := api.NewAPI(logger)
 
 	router := gin.New()
@@ -24,6 +27,7 @@ func main() {
 
 	api.GET("/", handlers.Hello)
 	api.POST("/books", handlers.AddBook(library))
+
 	api.GET("/books", handlers.GetAllBooks(library))
 	api.GET("/books/:id", handlers.GetBook(library))
 	api.DELETE("/books/:id", handlers.DeleteBook(library))
