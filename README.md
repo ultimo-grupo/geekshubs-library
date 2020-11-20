@@ -2,7 +2,7 @@
 
 API REST para gestionar libros.
 
-![Go](https://github.com/ultimo-grupo/geekshubs-library/workflows/Go/badge.svg)
+![Test](https://github.com/ultimo-grupo/geekshubs-library/workflows/Test/badge.svg)
 ![Super-Linter](https://github.com/ultimo-grupo/geekshubs-library/workflows/Super-Linter/badge.svg)
 
 ## Cómo funciona
