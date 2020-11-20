@@ -20,12 +20,12 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: ssh ubuntu@ec2-35-153-136-49.compute-1.amazonaws.com
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: echo "hello"
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ec2-35-153-136-49.compute-1.amazonaws.com
+        key:  ${{secrets.SSH_KEY}}
+        port:  22
+        username: ubuntu
+        script: whoami
