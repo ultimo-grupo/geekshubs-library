@@ -2,6 +2,9 @@
 
 API REST para gestionar libros.
 
+![Go](https://github.com/ultimo-grupo/geekshubs-library/workflows/Go/badge.svg)
+![Super-Linter](https://github.com/ultimo-grupo/geekshubs-library/workflows/Super-Linter/badge.svg)
+
 ## Cómo funciona
 
 La API se ha implementado con una pequeña aplicación en Go. Para persistir la información utiliza una Base de Datos MySQL.
