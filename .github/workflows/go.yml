@@ -30,7 +30,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v .
+      run: cd cmd/geekshubs-library && GOOS=linux GOARCH=amd64 go build -o ../bin/main-linux-amd64 main.go
 
     - name: Test
       run: cd pkg && CGO_ENABLED=${CGO_ENABLED} go test ./...
