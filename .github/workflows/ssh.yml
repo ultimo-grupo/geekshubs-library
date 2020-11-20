@@ -28,4 +28,4 @@ jobs:
         key:  ${{secrets.SSH_KEY}}
         port:  22
         username: ubuntu
-        script: whoami
+        script: update.sh  
